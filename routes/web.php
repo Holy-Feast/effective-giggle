@@ -19,6 +19,9 @@ Route::get('/', function () {
 Route::get('/look/', function () {
     return '<h1>Hello world?</h1>';
 });
+Route::get('/newlook/', function () {
+    return '<h1>Hello world!</h1>';
+});
 
 Auth::routes();
 
