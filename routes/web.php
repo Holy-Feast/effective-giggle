@@ -1,7 +1,7 @@
-<?php
+	<?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Http;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,12 +12,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+$response = Http::get('https://www.thunderclient.io/welcome', [
+    'Accept' => '/',
+    'User-Agent' => 'Thunder Client (https://www.thunderclient.io)',
+]);
 
 Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/look/', function () {
-    return '<h1>Hello world?</h1>';
+    return $response;
 });
 Route::get('/newlook/', function () {
     return '<h1>Hello world!</h1>';
