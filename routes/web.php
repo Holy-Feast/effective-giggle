@@ -12,15 +12,13 @@ use Illuminate\Support\Facades\Http;
 | contains the "web" middleware group. Now create something great!
 |
 */
-$response = Http::get('https://www.thunderclient.io/welcome', [
-    'User-Agent' => 'Thunder Client (https://www.thunderclient.io)'
-]);
+
 
 Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/look/', function () {
-    return var_dump($response);
+    return view('app');
 });
 Route::get('/newlook/', function () {
     return '<h1>Hello world!</h1>';
