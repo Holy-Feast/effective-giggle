@@ -13,15 +13,14 @@ use Illuminate\Support\Facades\Http;
 |
 */
 $response = Http::get('https://www.thunderclient.io/welcome', [
-    'Accept' => '/',
-    'User-Agent' => 'Thunder Client (https://www.thunderclient.io)',
+    'User-Agent' => 'Thunder Client (https://www.thunderclient.io)'
 ]);
 
 Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/look/', function () {
-    return $response;
+    return var_dump($response);
 });
 Route::get('/newlook/', function () {
     return '<h1>Hello world!</h1>';
